@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using EFCoreWPF.Data;
+using EFCoreWPF.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,27 +11,28 @@ namespace EFCoreWPF
 {
     public partial class App
     {
-        private IHost _Host;
+        private static IHost __Host;
+
+        public static IHost Host => __Host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
 
         protected override async void OnStartup(StartupEventArgs e)
         {
-            _Host = Program.CreateHostBuilder(e.Args).Build();
-
-            var db_initializer = _Host.Services.GetRequiredService<DatabaseInitializer>();
-            await db_initializer.InitializeAsync();
+            var host = Host;
+            await host.Services.GetRequiredService<DatabaseInitializer>().InitializeAsync();
 
             base.OnStartup(e);
 
-            await _Host.StartAsync().ConfigureAwait(false);
+            await host.StartAsync().ConfigureAwait(false);
         }
 
         protected override async void OnExit(ExitEventArgs e)
         {
             base.OnExit(e);
 
-            await _Host.StopAsync().ConfigureAwait(false);
-            _Host.Dispose();
-            _Host = null;
+            var host = Host;
+            await host.StopAsync().ConfigureAwait(false);
+            host.Dispose();
+            __Host = null;
         }
 
         public static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
@@ -37,6 +40,8 @@ namespace EFCoreWPF
             services.AddDbContext<Database>(opt => 
                 opt.UseSqlServer(host.Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<DatabaseInitializer>();
+
+            services.AddSingleton<MainWindowViewModel>();
         }
     }
 }
