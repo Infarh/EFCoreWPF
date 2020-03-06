@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using EFCoreWPF.Infrastrucrure.Interfaces;
 using EFCoreWPF.Services.Interfaces;
 using EFCoreWPF.ViewModels.Base;
 
@@ -8,6 +9,7 @@ namespace EFCoreWPF.ViewModels
 {
     class MainWindowViewModel : ViewModel
     {
+        private readonly IUserDialogService _UserDialog;
         private readonly IStudentsManager _StudentsManager;
 
         #region Title : string - Заголовок окна
@@ -20,8 +22,9 @@ namespace EFCoreWPF.ViewModels
 
         #endregion
 
-        public MainWindowViewModel(IStudentsManager StudentsManager)
+        public MainWindowViewModel(IUserDialogService UserDialog, IStudentsManager StudentsManager)
         {
+            _UserDialog = UserDialog;
             _StudentsManager = StudentsManager;
         }
     }
