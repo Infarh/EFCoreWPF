@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using EFCoreWPF.Data;
+using EFCoreWPF.Infrastrucrure;
 using EFCoreWPF.Services;
 using EFCoreWPF.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -40,6 +41,7 @@ namespace EFCoreWPF
         {
             services.AddDatabaseServices(host.Configuration.GetConnectionString("DefaultConnection"));
             services.AddStudentServices();
+            services.AddAppServices();
         }
     }
 }
