@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using EFCoreWPF.Annotations;
 
 namespace EFCoreWPF.Infrastructure
 {
@@ -16,12 +17,12 @@ namespace EFCoreWPF.Infrastructure
 
         public LambdaCommand(Action<object> Execute, Func<object, bool> CanExecute = null)
         {
-            _Execute = Execute;
+            _Execute = Execute ?? throw new ArgumentNullException(nameof(Execute));
             _CanExecute = CanExecute;
         }
 
         public bool CanExecute(object parameter) => _CanExecute?.Invoke(parameter) ?? true;
 
-        public void Execute(object parameter) => Execute(parameter);
+        public void Execute(object parameter) => _Execute(parameter);
     }
 }
