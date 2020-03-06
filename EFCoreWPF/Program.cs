@@ -19,9 +19,9 @@ namespace EFCoreWPF
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-               .UseContentRoot(Environment.CurrentDirectory)
+               .UseContentRoot(App.GetCurrentDirectory())
                .ConfigureAppConfiguration((host, cfg) => 
-                    cfg.SetBasePath(Environment.CurrentDirectory)
+                    cfg.SetBasePath(App.GetCurrentDirectory())
                        .AddJsonFile("appsettings.json", true, true))
                .ConfigureServices(App.ConfigureServices);
     }

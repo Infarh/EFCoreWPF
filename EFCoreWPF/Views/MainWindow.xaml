@@ -4,10 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EFCoreWPF"
-        Title="{Binding Title}"
+        Title="{Binding Title, TargetNullValue=[null], FallbackValue=[Fail]}"
         Width="800" Height="450"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
     <Grid>
-
+        <TextBlock Text="{Binding AppSettingsFile, Source={StaticResource Locator}}"/>
     </Grid>
 </Window>

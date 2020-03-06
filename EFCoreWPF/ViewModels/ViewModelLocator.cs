@@ -1,13 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using EFCoreWPF.ViewModels;
+using EFCoreWPF.ViewModels.Base;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EFCoreWPF.ViewModels
 {
-    internal class ViewModelLocator
+    internal class ViewModelLocator : ViewModel
     {
-        public MainWindowViewModel MainWindowModel => App.Host.Services.GetRequiredService<MainWindowViewModel>();
+        private Exception _Exception;
+        public Exception Exception { get => _Exception; private set => Set(ref _Exception, value); }
+
+        public MainWindowViewModel MainWindowModel
+        {
+            get
+            {
+                try
+                {
+                    return App.Host.Services.GetRequiredService<MainWindowViewModel>();
+                }
+                catch (Exception e)
+                {
+                    Exception = e;
+                    throw;
+                }
+            }
+        }
     }
 }
