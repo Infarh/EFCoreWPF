@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreWPF.Services.Stores.EF
 {
-    abstract class DataStore<T> : IDataStore<T> where T : class, IEntity
+    internal abstract class DataStore<T> : IDataStore<T> where T : class, IEntity
     {
         protected readonly Database _db;
         protected readonly DbSet<T> _Items;

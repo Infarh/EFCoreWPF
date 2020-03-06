@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using EFCoreWPF.Infrastrucrure.Interfaces;
+using EFCoreWPF.Infrastructure.Interfaces;
 using EFCoreWPF.Services.Interfaces;
 using EFCoreWPF.ViewModels.Base;
 
 namespace EFCoreWPF.ViewModels
 {
-    class MainWindowViewModel : ViewModel
+    internal class MainWindowViewModel : ViewModel
     {
         private readonly IUserDialogService _UserDialog;
         private readonly IStudentsManager _StudentsManager;

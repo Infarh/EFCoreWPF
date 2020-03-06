@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreWPF.Services.Stores.EF
 {
-    class StudentsStore : DataStore<Student>, IStudentStore
+    internal class StudentsStore : DataStore<Student>, IStudentStore
     {
         public override IQueryable<Student> Items => base.Items.Include(s => s.Courses).ThenInclude(sc => sc.Course);
 

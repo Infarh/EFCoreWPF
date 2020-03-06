@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
-namespace EFCoreWPF.Infrastrucrure
+namespace EFCoreWPF.Infrastructure
 {
-    class LambdaCommand : ICommand
+    internal class LambdaCommand : ICommand
     {
         private readonly Action<object> _Execute;
         private readonly Func<object, bool> _CanExecute;

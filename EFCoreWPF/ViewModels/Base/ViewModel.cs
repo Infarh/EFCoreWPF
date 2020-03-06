@@ -7,7 +7,7 @@ using EFCoreWPF.Annotations;
 
 namespace EFCoreWPF.ViewModels.Base
 {
-    class ViewModel : INotifyPropertyChanged
+    internal class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

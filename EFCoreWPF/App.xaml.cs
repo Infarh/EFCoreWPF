@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using EFCoreWPF.Data;
-using EFCoreWPF.Infrastrucrure;
+using EFCoreWPF.Infrastructure;
 using EFCoreWPF.Services;
 using EFCoreWPF.ViewModels;
 using Microsoft.EntityFrameworkCore;

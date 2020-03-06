@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EFCoreWPF.Infrastrucrure.Interfaces;
-using EFCoreWPF.Infrastrucrure.Services;
+﻿using EFCoreWPF.Infrastructure.Interfaces;
+using EFCoreWPF.Infrastructure.Services;
 using EFCoreWPF.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EFCoreWPF.Infrastrucrure
+namespace EFCoreWPF.Infrastructure
 {
-    static class AppServicesExtensions
+    internal static class AppServicesExtensions
     {
         public static IServiceCollection AddAppServices(this IServiceCollection services)
         {

@@ -7,7 +7,7 @@ using EFCoreWPF.Services.Interfaces;
 
 namespace EFCoreWPF.Services
 {
-    class StudentsesManager : IStudentsManager
+    internal class StudentsesManager : IStudentsManager
     {
         private readonly IStudentStore _Students;
         private readonly ICoursesStore _Courses;
