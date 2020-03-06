@@ -9,16 +9,4 @@ namespace EFCoreWPF.Entityes
     {
         public virtual ICollection<StudentCourse> Courses { get; set; } = new HashSet<StudentCourse>();
     }
-
-    public class Course : NamedEntity
-    {
-        public virtual ICollection<StudentCourse> Students { get; set; } = new HashSet<StudentCourse>();
-    }
-
-    public class StudentCourse
-    {
-        public virtual Student Student { get; set; }
-
-        public virtual Course Course { get; set; }
-    }
 }
