@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using EFCoreWPF.Data;
+using EFCoreWPF.Services;
 using EFCoreWPF.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -37,11 +38,8 @@ namespace EFCoreWPF
 
         public static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
-            services.AddDbContext<Database>(opt => 
-                opt.UseSqlServer(host.Configuration.GetConnectionString("DefaultConnection")));
-            services.AddTransient<DatabaseInitializer>();
-
-            services.AddSingleton<MainWindowViewModel>();
+            services.AddDatabaseServices(host.Configuration.GetConnectionString("DefaultConnection"));
+            services.AddStudentServices();
         }
     }
 }

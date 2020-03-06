@@ -7,5 +7,13 @@ namespace EFCoreWPF.Entityes
         public virtual Student Student { get; set; }
 
         public virtual Course Course { get; set; }
+
+        public StudentCourse() { }
+
+        public StudentCourse(Student Student, Course Course)
+        {
+            this.Student = Student;
+            this.Course = Course;
+        }
     }
 }
