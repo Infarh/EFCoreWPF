@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="@ButtonBase" TargetType="{x:Type ButtonBase}">
+        <Setter Property="Background" Value="{StaticResource SolidBrushWhite}"></Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource @ButtonBase}"/>
+    <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource @ButtonBase}"/>
+    
+</ResourceDictionary>

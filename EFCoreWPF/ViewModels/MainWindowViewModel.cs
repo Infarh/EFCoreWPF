@@ -37,6 +37,13 @@ namespace EFCoreWPF.ViewModels
 
         #endregion
 
+        #region Command AboutProgramCommand - О программе
+
+        /// <summary>О программе</summary>
+        public ICommand AboutProgramCommand { get; }
+
+        #endregion
+
         #endregion
 
         public MainWindowViewModel(IUserDialogService UserDialog, IStudentsManager StudentsManager)
@@ -47,6 +54,7 @@ namespace EFCoreWPF.ViewModels
             #region Команды
 
             ExitCommand = new LambdaCommand(OnExitCommandExecuted, CanExitCommandExecute);
+            AboutProgramCommand = new LambdaCommand(_UserDialog.AboutProgram);
 
             #endregion
         }

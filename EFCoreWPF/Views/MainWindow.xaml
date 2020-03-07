@@ -13,7 +13,7 @@
                 <MenuItem Header="Выход" Command="{Binding ExitCommand}"/>
             </MenuItem>
             <MenuItem Header="Помощь">
-                <MenuItem Header="О программе"/>
+                <MenuItem Header="О программе" Command="{Binding AboutProgramCommand}"/>
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">

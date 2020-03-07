@@ -14,6 +14,9 @@ namespace EFCoreWPF.Infrastructure
             remove => CommandManager.RequerySuggested -= value;
         }
 
+        public LambdaCommand(Action Execute, Func<bool> CanExecute = null) 
+            : this(p => Execute(), CanExecute is null ? null : new Func<object, bool>(p => CanExecute())) { }
+
         public LambdaCommand(Action<object> Execute, Func<object, bool> CanExecute = null)
         {
             _Execute = Execute ?? throw new ArgumentNullException(nameof(Execute));

@@ -8,7 +8,17 @@
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
          <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+
+                 <ResourceDictionary Source="Resources/Base/Colors.xaml"/>
+
+                 <ResourceDictionary Source="Resources/Effects.xaml"/>
+                 <ResourceDictionary Source="Resources/Buttons.xaml"/>
+
+             </ResourceDictionary.MergedDictionaries>
+
              <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"/>
+
          </ResourceDictionary>
     </Application.Resources>
 </Application>
