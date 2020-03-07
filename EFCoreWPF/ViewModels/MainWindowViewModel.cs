@@ -1,4 +1,7 @@
-﻿using EFCoreWPF.Infrastructure.Interfaces;
+﻿using System.Windows;
+using System.Windows.Input;
+using EFCoreWPF.Infrastructure;
+using EFCoreWPF.Infrastructure.Interfaces;
 using EFCoreWPF.Services.Interfaces;
 using EFCoreWPF.ViewModels.Base;
 
@@ -19,10 +22,33 @@ namespace EFCoreWPF.ViewModels
 
         #endregion
 
+        #region Команды
+
+        #region Command ExitCommand - Выход
+
+        /// <summary>Выход</summary>
+        public ICommand ExitCommand { get; }
+
+        /// <summary>Проверка возможности выполнения - Выход</summary>
+        private static bool CanExitCommandExecute(object p) => true;
+
+        /// <summary>Логика выполнения - Выход</summary>
+        private static void OnExitCommandExecuted(object p) => Application.Current.Shutdown(p as int? ?? 0);
+
+        #endregion
+
+        #endregion
+
         public MainWindowViewModel(IUserDialogService UserDialog, IStudentsManager StudentsManager)
         {
             _UserDialog = UserDialog;
             _StudentsManager = StudentsManager;
+
+            #region Команды
+
+            ExitCommand = new LambdaCommand(OnExitCommandExecuted, CanExitCommandExecute);
+
+            #endregion
         }
     }
 }

@@ -7,7 +7,23 @@
         Title="{Binding Title, TargetNullValue=[null], FallbackValue=[Fail]}"
         Width="800" Height="450"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Command="{Binding ExitCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="О программе"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem DockPanel.Dock="Right">
+                <ResizeGrip/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="Ready"/>
+            </StatusBarItem>
+        </StatusBar>
+        <Grid></Grid>
+    </DockPanel>
 </Window>
