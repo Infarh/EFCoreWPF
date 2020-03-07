@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using EFCoreWPF.Entityes;
+﻿using EFCoreWPF.Entityes;
 
 namespace EFCoreWPF.Services.Interfaces
 {

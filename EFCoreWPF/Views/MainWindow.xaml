@@ -8,6 +8,6 @@
         Width="800" Height="450"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
     <Grid>
-        <TextBlock Text="{Binding AppSettingsFile, Source={StaticResource Locator}}"/>
+
     </Grid>
 </Window>

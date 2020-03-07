@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using EFCoreWPF.Data;
 using EFCoreWPF.Entityes;
 using EFCoreWPF.Services.Interfaces;

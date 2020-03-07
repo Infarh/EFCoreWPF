@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EFCoreWPF.Infrastructure.Interfaces;
+﻿using EFCoreWPF.Infrastructure.Interfaces;
 using EFCoreWPF.Services.Interfaces;
 using EFCoreWPF.ViewModels.Base;
 

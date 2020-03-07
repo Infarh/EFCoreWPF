@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using EFCoreWPF.ViewModels;
 using EFCoreWPF.ViewModels.Base;
 using Microsoft.Extensions.DependencyInjection;
 

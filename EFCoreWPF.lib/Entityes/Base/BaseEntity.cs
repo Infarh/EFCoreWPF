@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EFCoreWPF.Entityes.Base.Interfaces;
+﻿using EFCoreWPF.Entityes.Base.Interfaces;
 
 namespace EFCoreWPF.Entityes.Base
 {

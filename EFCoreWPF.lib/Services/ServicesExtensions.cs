@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EFCoreWPF.Services.Interfaces;
+﻿using EFCoreWPF.Services.Interfaces;
 using EFCoreWPF.Services.Stores.EF;
 using Microsoft.Extensions.DependencyInjection;
 

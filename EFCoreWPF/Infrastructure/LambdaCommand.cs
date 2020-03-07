@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Input;
-using EFCoreWPF.Annotations;
 
 namespace EFCoreWPF.Infrastructure
 {

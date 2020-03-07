@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EFCoreWPF.Entityes;
+﻿using EFCoreWPF.Entityes;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreWPF.Data
