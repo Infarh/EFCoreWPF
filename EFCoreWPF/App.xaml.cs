@@ -16,7 +16,6 @@ namespace EFCoreWPF
         private static bool __IsDesignTime = true;
         public static bool IsDesignTime => __IsDesignTime;
 
-
         private static IHost __Host;
 
         public static IHost Host => __Host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
@@ -25,7 +24,9 @@ namespace EFCoreWPF
         {
             __IsDesignTime = false;
             var host = Host;
-            await host.Services.GetRequiredService<DatabaseInitializer>().InitializeAsync();
+            host.Services
+               .GetRequiredService<DatabaseInitializer>()
+               .Initialize();
 
             base.OnStartup(e);
 
